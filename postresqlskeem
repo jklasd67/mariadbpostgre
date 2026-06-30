@@ -1,0 +1,23 @@
+CREATE DATABASE jkool1;
+
+\c jkool1
+
+CREATE TABLE opilased (
+    id SERIAL PRIMARY KEY,
+    nimi VARCHAR(100) NOT NULL,
+    vanus INT,
+    eriala VARCHAR(100),
+    registreeritud DATE
+);
+
+INSERT INTO opilased (nimi, vanus, eriala, registreeritud)
+VALUES
+('Karl',20,'Informaatika','2025-01-15'),
+('Mari',22,'Ärindus','2024-09-01'),
+('Jaan',19,'Informaatika','2025-02-10');
+
+SELECT * FROM opilased;
+
+SELECT nimi, eriala
+FROM opilased
+WHERE vanus >= 20;
