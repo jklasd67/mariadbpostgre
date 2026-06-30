@@ -1,0 +1,9 @@
+MariaDB ja PostgreSQL võrdlus
+
+Praktilise töö käigus lõin mõlemas andmebaasimootoris identse andmebaasi, tabeli ja näidisandmed ning täitsin samad SQL-päringud. Mõlemad süsteemid võimaldasid ülesande edukalt lahendada, kuid nende kasutamises ilmnes mitu erinevust.
+
+Esimene märgatav erinevus oli automaatselt kasvava primaarvõtme loomine. MariaDB kasutab selleks märksõna **AUTO_INCREMENT**, samas kui PostgreSQL-is kasutatakse tavaliselt andmetüüpi **SERIAL** (või uuemates lahendustes IDENTITY). Funktsionaalselt saavutatakse sama tulemus, kuid süntaks on erinev. See on oluline siis, kui sama rakendust soovitakse kasutada erinevate andmebaasimootoritega.
+
+Teine erinevus puudutas andmebaasi valimist. MariaDB-s kasutatakse käsku **USE andmebaas**, mis võimaldab kiiresti aktiivset andmebaasi vahetada. PostgreSQL-is tuleb luua ühendus soovitud andmebaasiga käsuga **\c andmebaas**, sest üks ühendus töötab korraga ainult ühe andmebaasiga. See muudab PostgreSQL-i tööviisi veidi erinevaks, kuid aitab ühenduste haldamisel selgust säilitada.
+
+Minu hinnangul oli MariaDB lihtsam ja intuitiivsem kasutada, eriti algajale. PostgreSQL tundus samas rangem ning rohkem SQL-standardile vastav. Kuigi erinevused olid peamiselt süntaksis, võimaldasid mõlemad süsteemid luua sama andmestruktuuri, sisestada samad andmed ja täita samad päringud. Praktikas sobivad mõlemad hästi relatsiooniliste andmebaaside loomiseks ning valik sõltub eelkõige projekti vajadustest ja kasutatavast tehnoloogiast.
